@@ -42,6 +42,10 @@ public class CentralSystem {
 		else
 			barrier.open();
 	}
+	
+	public Boolean AllowEmployee() {
+		return reader.validateEmployee(systemID, store);
+	}
 
 	//views store customer count
 	public int viewCount() {

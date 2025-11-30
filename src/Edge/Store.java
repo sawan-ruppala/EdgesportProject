@@ -11,6 +11,7 @@ public class Store {
     private int maxCustomers;
     private int customerCount;
     
+    //assuming there is only one manager
     public Manager manager;
     
     //list of employees
@@ -29,7 +30,7 @@ public class Store {
         //https://stackoverflow.com/questions/17441871/is-passing-this-in-a-method-call-accepted-practice-in-java
         //basically you can have a system object in a store, and a store have a system object
         this.man_console = new ManagerConsole(this);
-        this.system = new CentralSystem("CS-01", this);
+        this.system = new CentralSystem("S-1", this);
     }
 
 
