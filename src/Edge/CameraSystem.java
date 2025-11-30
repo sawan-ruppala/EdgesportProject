@@ -7,8 +7,8 @@ public class CameraSystem extends Device{
 		
 	}
 	
-	public int detect_person(int number) {
-	        return number;
+	public int detect_person() {
+	        return 1;
 	  }
 	
 	
