@@ -7,6 +7,8 @@ public class StoreUI {
 	public static void main(String[] args) {
 		
 		boolean automaticControl = true;
+		Store store = new Store(10);
+		CentralSystem system = store.system;
 		
 		Scanner input = new Scanner(System.in);
 
@@ -35,15 +37,14 @@ public class StoreUI {
             
 		    switch (usersChoice.charAt(0)) {
 		        case '1': {
-	                System.out.println("Current customer count: " + "some referenced value...");
+	                System.out.println("Current customer count: " + store.getCustomerCount());
 	                break;
 		        }
 		        case '2': {
-	                System.out.println("Current maximum limit: " + "some referenced value...");
+	                System.out.println("Current maximum limit: " + store.getMaxCustomers());
 		        	System.out.println("Enter a new maximum limit: ");
 		        	Scanner scanner = new Scanner(System.in);
-					int tempValue = scanner.nextInt();
-		        	System.out.println(tempValue);
+		        	store.setMaxCustomers(scanner.nextInt());
 		        	break;
 		        }
 		        
@@ -70,16 +71,18 @@ public class StoreUI {
 		        }
 		        case '6': {
 		        	// Code for simulating customer entering store
+		        	store.setCustomerCount(store.getCustomerCount() + 1);
 		        	break;
 		        }
 		        case '7': {
 		        	// Code for simulating customer exiting store
+		        	store.setCustomerCount(store.getCustomerCount() - 1);
 		        	break;
 		        }
 		        case '8': {
 			        // Code for simulating employee swiping card (Bypass barrier one time, but keep automaticControl status the same)
 		        	break;
-		        }   
+		        }
 		    }
 		}
 	}	

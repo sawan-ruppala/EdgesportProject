@@ -17,8 +17,8 @@ public class Store {
     //list of employees
     ArrayList<Employee> employeelist = new ArrayList<Employee>(); 
 
-    private ManagerConsole man_console;
-    private CentralSystem system;
+    public ManagerConsole man_console;
+    public CentralSystem system;
 
     public Store(int maxCustomers) {
 
