@@ -71,12 +71,12 @@ public class StoreUI {
 		        }
 		        case '6': {
 		        	// Code for simulating customer entering store
-		        	store.setCustomerCount(store.getCustomerCount() + 1);
+		        	system.addCount();
 		        	break;
 		        }
 		        case '7': {
 		        	// Code for simulating customer exiting store
-		        	store.setCustomerCount(store.getCustomerCount() - 1);
+		        	system.minusCount();;
 		        	break;
 		        }
 		        case '8': {
