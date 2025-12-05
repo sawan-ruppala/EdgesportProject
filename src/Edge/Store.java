@@ -16,7 +16,9 @@ public class Store {
     
     //list of employees
     ArrayList<Employee> employeelist = new ArrayList<Employee>(); 
-
+	
+	
+	
     public ManagerConsole man_console;
     public CentralSystem system;
 
@@ -31,6 +33,20 @@ public class Store {
         //basically you can have a system object in a store, and a store have a system object
         this.man_console = new ManagerConsole(this);
         this.system = new CentralSystem("S-1", this);
+        
+        //PRETEND THAT THIS IS THE DATABASE
+        //SYSTEM WOULD PULL UP LIST OF EMPLOYEES FROM DATABASE
+        //FINDS THE EMPLOYEE SAWAN & FELIX THE MANAGER
+        Employee Sawan = new Employee("123", "Sawan Ruppala", "456");
+        Manager Felix = new Manager("234", "Felix", "234", "234");
+        employeelist.add(Sawan);
+        employeelist.add(Felix);
+        
+        //finds the sole manager in the "database", assuming one for each store
+        for (Employee e : employeelist) {
+        	if (e instanceof Manager)
+        		this.manager = (Manager) e;
+        }
     }
 
 
@@ -48,5 +64,9 @@ public class Store {
 
     public int getMaxCustomers() {
         return maxCustomers;
+    }
+    
+    public void AddEmployee(Employee e) {
+    	employeelist.add( e);
     }
 }

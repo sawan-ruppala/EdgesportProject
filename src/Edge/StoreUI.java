@@ -9,6 +9,8 @@ public class StoreUI {
 		boolean automaticControl = true;
 		Store store = new Store(10);
 		CentralSystem system = store.system;
+	
+
 
 		Scanner input = new Scanner(System.in);
 
@@ -123,16 +125,7 @@ public class StoreUI {
 
 					
 		        }
-
-		        case '8': {
-			        // Code for simulating employee swiping card in (Bypass barrier one time, but keep automaticControl status the same)
-		        	break;
-		        }
-
-				 case '9': {
-			        // Code for simulating employee swiping card out (Bypass barrier one time, but keep automaticControl status the same)
-		        	break;
-		        }
+		 
 		    }
 		}
 	}	
