@@ -27,7 +27,7 @@ public class StoreUI {
 			    System.out.println("   3- Open barrier");
 			    System.out.println("   4- Close barrier");
 		    }
-		    System.out.println(store.employeelist);
+		  
 		    
 		    System.out.println();
 			System.out.println("Simulate store activity");
