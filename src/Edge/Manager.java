@@ -9,8 +9,8 @@ private String adminpass;
 		this.adminpass = adminpass;
 	}
 	
-	//returns adminpass
-	public String return_adminpass() {
+	//returns adminpass for verification
+	public String returnAdminPass() {
 		return adminpass;
 	}
  

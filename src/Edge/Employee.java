@@ -11,8 +11,9 @@ public class Employee {
 	        this.cardID = cardID;
 	    }
 	 
-	 //returns employee card in arraylist database
-	 public String returncard() {
+	 //returns employee card
+	 //stored in the employeelist arraylist
+	 public String returnCard() {
 		 return cardID;
 	 }
 }

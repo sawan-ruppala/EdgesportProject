@@ -17,7 +17,7 @@ public class StoreUI {
 		    System.out.println("*****************************************************");
 		    
 		    System.out.println("Barrier status: " + (system.barrier.isOpen ? "Open" : "Closed"));
-            System.out.println("Current customer count: " + store.getCustomerCount());
+            System.out.println("Current customer count: " + store.getcustomerCount());
             System.out.println("Barrier message: " + system.barrier.notice_message);
 			System.out.println();
 
@@ -32,7 +32,6 @@ public class StoreUI {
 			System.out.println("   5- Customer enters store...");
 			System.out.println("   6- Customer exits store...");
 			System.out.println("   7- Employee swipes card in...");
-			System.out.println("   8- Employee swipes card out...");
 
 		 
 		    String usersChoice = input.nextLine();

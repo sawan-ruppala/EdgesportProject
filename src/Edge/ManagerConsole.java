@@ -11,7 +11,7 @@ public class ManagerConsole {
 
     //checks if manager is allowed to go inside
     public boolean accessCentralSystem(String pass, Manager manager) {
-        return manager.return_adminpass() == pass;
+        return manager.returnAdminPass() == pass;
     }
 
     //manager sets the store's capacity limit

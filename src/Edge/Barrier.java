@@ -1,10 +1,16 @@
 package Edge;
 
+//Extends the abstract class of Device
 public class Barrier extends Device {
-	public boolean isOpen = true; // Sets default state to open
-	public String notice_message = "Open for business"; // Sets default value
+	
+	//current boolean status for barrier
+	public boolean isOpen = true;
+	
+	//message that can be used to return the opening status
+	public String notice_message = "Open for business"; 
 	public boolean automaticControl = true;
 	
+	//initializes with the deviceID and ipaddress
 	public Barrier(String deviceID, String ipAddress) {
 		super(deviceID, ipAddress);
 	}
@@ -15,6 +21,7 @@ public class Barrier extends Device {
 		notice_message = "Open for business.";
 	}
 
+	//checks if the barrier is open
 	public boolean isOpen(){
 		return isOpen;
 	}
@@ -26,7 +33,7 @@ public class Barrier extends Device {
 	}
 
 	//displays the notice
-	public String display_notice() {
+	public String displayNotice() {
 		return notice_message;
 	}
 }

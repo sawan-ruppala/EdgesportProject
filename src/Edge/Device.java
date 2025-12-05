@@ -1,6 +1,7 @@
 package Edge;
 
 //abstract class
+//has ipaddress and device ID
 public abstract class Device {
 
 	public String deviceID;

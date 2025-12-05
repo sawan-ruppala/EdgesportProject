@@ -2,16 +2,17 @@ package Edge;
 
 public class CardReader extends Device {
 
-	// initialize the CardReader
+	//initialize it with the super() deviceID and ipAddress
 	public CardReader(String deviceID, String ipAddress) {
 		super(deviceID, ipAddress);
 
 	}
 
-	// checks the store's array list of employees
-	public boolean validateEmployee(String key, Store store) {
-		for (Employee emp : store.employeelist) {
-			if (emp.returncard() == key) {
+	//boolean status that checks if the user's input exists
+	//in the employeelist aka the database. 
+	public boolean validateEmployee(String cardID, Store store) {
+		for (Employee e : store.employeelist) {
+			if (e.returnCard() == cardID) {
 				return true;
 			}
 		}
