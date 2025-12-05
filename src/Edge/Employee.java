@@ -2,7 +2,7 @@ package Edge;
 
 public class Employee {
 	 private String employeeID;
-	 private String name;
+	 public String name;
 	 private String cardID;
 	 
 	 public Employee(String employeeID, String name, String cardID) {

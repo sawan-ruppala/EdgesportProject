@@ -75,8 +75,8 @@ public class CentralSystem {
 	// checks if the employee is allowed in the store
 	// uses the cardreader to handle the logic, not directly
 	// in the system
-	public Boolean AllowEmployee() {
-		return reader.validateEmployee(systemID, store);
+	public Boolean AllowEmployee(String cardID) {
+		return reader.validateEmployee(cardID, store);
 	}
 
 	// views store customer count

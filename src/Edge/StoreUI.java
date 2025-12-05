@@ -27,6 +27,8 @@ public class StoreUI {
 			    System.out.println("   3- Open barrier");
 			    System.out.println("   4- Close barrier");
 		    }
+		    System.out.println(store.employeelist);
+		    
 		    System.out.println();
 			System.out.println("Simulate store activity");
 			System.out.println("   5- Customer enters store...");
@@ -117,7 +119,14 @@ public class StoreUI {
 					system.minusCount();
 					System.out.println("A customer left the store");
 					break;					
-		        }		 
+		        }
+		        
+		        case '7': {
+		        	System.out.println("Employee Swipes His CardID. Enter a Number:");		   
+		        	 String empID = input.nextLine();
+		        	 system.AllowEmployee(empID);
+		        	 
+		        }
 		    }
 		}
 	}	
