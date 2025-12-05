@@ -40,13 +40,19 @@ public class CentralSystem {
 
 	public void controlBarrier() {
 		
-		//if customers is now at capacity
-		if (store.getCustomerCount() == store.getMaxCustomers())
+		//if customers is now at capacity outputs message of display and closes or opens barrier
+	
+		if (store.getCustomerCount() >= store.getMaxCustomers()){
 			barrier.closed();
-		
-		else
+			System.out.println("the barrier is " + barrier.display_notice() + " the customer did not enter");
+		}
+		else{
 			barrier.open();
+			System.out.println("The barrier is " + barrier.display_notice() + " the customer entered");
+		}
 	}
+
+	
 	
 	public Boolean AllowEmployee() {
 		return reader.validateEmployee(systemID, store);
