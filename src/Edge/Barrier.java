@@ -14,6 +14,10 @@ public class Barrier extends Device {
 		notice_message = "Open";
 	}
 
+	public boolean isOpen(){
+		return isOpen;
+	}
+
 	//barrier set to close
 	public void closed() {
 		isOpen = false;

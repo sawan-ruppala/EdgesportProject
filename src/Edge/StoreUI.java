@@ -9,7 +9,7 @@ public class StoreUI {
 		boolean automaticControl = true;
 		Store store = new Store(10);
 		CentralSystem system = store.system;
-		
+
 		Scanner input = new Scanner(System.in);
 
 		while (true) {
@@ -27,7 +27,8 @@ public class StoreUI {
 			System.out.println("Simulate store activity");
 			System.out.println("   6- Customer enters store...");
 			System.out.println("   7- Customer exits store...");
-			System.out.println("   8- Employee swipes card...");
+			System.out.println("   8- Employee swipes card in...");
+			System.out.println("   9- Employee swipes card out...");
 
 		 
 		    String usersChoice = input.nextLine();
@@ -54,33 +55,82 @@ public class StoreUI {
 	                break;
 		        }
 		        case '4': {
+					// Code for manually opening barrier
 		        	if (automaticControl) break;
 	                System.out.println("Barrier has been opened.");
+	                system.barrier.open();
+					
 	                
-	                // Code for opening barrier
+
 		        	
 	                break;
 		        }
 		        case '5': {
+					// Code for manually closing barrier
 		        	if (automaticControl) break;
 	                System.out.println("Barrier has been closed.");
+	                system.barrier.closed();
 	                
-	                // Code for closing barrier
 	                
 		        	break;
 		        }
 		        case '6': {
 		        	// Code for simulating customer entering store
-		        	system.addCount();
-		        	break;
-		        }
+
+					//barriers automatically close/open based off total customers in store
+					if(automaticControl){
+						if(system.viewCount() >= store.getMaxCustomers()){
+							system.controlBarrier();
+							break;
+						}
+						system.controlBarrier();
+						system.addCount();
+						break;
+					}
+
+					//If a customer tries to come in when the doors are manually closed
+					if(system.barrier.isOpen != true){
+						System.out.println("Customer cannot come in right now doors are manually closed");
+						break;
+					}
+					//If the doors are open the customer is allowed to come in
+					system.addCount();
+					System.out.println("Customer has entered");
+					break;
+				}
+
 		        case '7': {
 		        	// Code for simulating customer exiting store
-		        	system.minusCount();;
+					//Checking if there are no customers in the store nobody can leave otherwise deducts a person
+					if(automaticControl){
+					if(system.viewCount() <= 0){
+						System.out.println("Nobody left the store because nobody is in the store!");
+						break;
+					}
+		        	system.minusCount();
+					System.out.println("A customer left the store");
+					break;
+					}
+					
+					//manual control where the doors are manually opened or shut and there might be 0 customers in the store if otherwise then a customer leaves
+					if(system.viewCount() <= 0){
+						System.out.println("Nobody left the store because nobody is in the store!");
+						break;
+					}
+					system.minusCount();
+					System.out.println("A customer left the store");
+					break;
+
+					
+		        }
+
+		        case '8': {
+			        // Code for simulating employee swiping card in (Bypass barrier one time, but keep automaticControl status the same)
 		        	break;
 		        }
-		        case '8': {
-			        // Code for simulating employee swiping card (Bypass barrier one time, but keep automaticControl status the same)
+
+				 case '9': {
+			        // Code for simulating employee swiping card out (Bypass barrier one time, but keep automaticControl status the same)
 		        	break;
 		        }
 		    }
