@@ -1,9 +1,10 @@
 package Edge;
 
 public class Barrier extends Device {
-	public boolean isOpen;
-	public String notice_message;
-
+	public boolean isOpen = true; // Sets default state to open
+	public String notice_message = "Open for business"; // Sets default value
+	public boolean automaticControl = true;
+	
 	public Barrier(String deviceID, String ipAddress) {
 		super(deviceID, ipAddress);
 	}
@@ -11,7 +12,7 @@ public class Barrier extends Device {
 	//barrier set to open
 	public void open() {
 		isOpen = true;
-		notice_message = "Open";
+		notice_message = "Open for business.";
 	}
 
 	public boolean isOpen(){
@@ -21,7 +22,7 @@ public class Barrier extends Device {
 	//barrier set to close
 	public void closed() {
 		isOpen = false;
-		notice_message = "Closed";
+		notice_message = "Barrier is closed. Store occupancy limit reached.";
 	}
 
 	//displays the notice
