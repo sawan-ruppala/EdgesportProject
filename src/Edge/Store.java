@@ -82,4 +82,12 @@ public class Store {
 	public void AddEmployee(Employee e) {
 		employeelist.add(e);
 	}
+	
+	public boolean verifyManager(String pass) {
+		return man_console.accessCentralSystem(pass, manager);
+	}
+	
+	public String getManagerName() {
+		return manager.name;
+	}
 }
