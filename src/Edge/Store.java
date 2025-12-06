@@ -74,6 +74,7 @@ public class Store {
 	// method that the manager uses to set the barrier limit
 	public void setMaxCustomers(int newLimit) {
 		this.maxCustomers = newLimit;
+		system.controlBarrier();
 	}
 
 	// adds employee to the employee list
