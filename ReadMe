@@ -1,3 +1,21 @@
+Using the system:
+Run StoreUI.java
+
+Two users exist in the system:
+Sawan Ruppala, EmployeeID: 123, CardID: 456
+Felix, EmployeeID: 234, CardID: 234, Admin Password: 234
+
+To change the store customer limit:
+1. Select option 1
+2. Enter the password: 234
+3. Enter a new limit
+
+The automatic barrier control is enabled by default, but can be disabled using option 2.
+When automatic control is disabled, the options to manually open and close the barrier are available.
+
+Option 7 simulates an employee swiping their card to bypass the barrier, but keep the current control status and customer count.
+When using this option, enter a CardID, either 456, or 234.
+
 Changes to our Code from Object Design Document
 
 //NOTE:

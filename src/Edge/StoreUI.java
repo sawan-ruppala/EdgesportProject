@@ -136,7 +136,7 @@ public class StoreUI {
 			}
 
 			case '7': {
-				System.out.println("Employee Swipes His CardID. Enter a Number:");
+				System.out.println("Employee swipes their CardID. Enter a number:");
 				String empID = input.nextLine();
 				system.AllowEmployee(empID);
 
