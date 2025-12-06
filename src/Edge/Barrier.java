@@ -18,7 +18,7 @@ public class Barrier extends Device {
 	//barrier set to open
 	public void open() {
 		isOpen = true;
-		notice_message = "Open for business.";
+		notice_message = "Barrier is Open for business.";
 	}
 
 	//checks if the barrier is open

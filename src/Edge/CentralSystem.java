@@ -63,12 +63,12 @@ public class CentralSystem {
 		// opens barrier
 		if (store.getcustomerCount() >= store.getMaxCustomers()) {
 			barrier.closed();
-			System.out.println("the barrier is " + barrier.displayNotice());
+			System.out.println(barrier.displayNotice());
 		}
 
 		else {
 			barrier.open();
-			System.out.println("The barrier is " + barrier.displayNotice());
+			System.out.println(barrier.displayNotice());
 		}
 	}
 
