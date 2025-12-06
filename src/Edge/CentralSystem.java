@@ -49,7 +49,7 @@ public class CentralSystem {
 		int exit = camIn.detectPerson();
 
 		// system updates the total amount
-		int total = store.getcustomerCount() + exit;
+		int total = store.getcustomerCount() - exit;
 
 		// sets a new total count of customers
 		store.setcustomerCount(total);
@@ -75,9 +75,45 @@ public class CentralSystem {
 	// checks if the employee is allowed in the store
 	// uses the cardreader to handle the logic, not directly
 	// in the system
-	public Boolean AllowEmployee(String cardID) {
+	
+//	public Manager manager;
+
+	public Boolean AllowEmployeeCard(String cardID) {
 		return reader.validateEmployee(cardID, store);
 	}
+	
+	
+	public Boolean AuthenticateEmployee(String empID, String password) {
+		if (reader.validateEmployee(empID, store)) {  // Check if empID is in the system
+			
+			
+			for (Employee e : store.employeelist) {
+			    if (e.getId().equals(empID) == e instanceof Employee == e.getPassword().equals(password)) {
+				    return true;
+
+			    }
+			}
+		}
+		    return false;
+	}
+	
+	
+	public Boolean AuthenticateManager(String empID, String password) { // Check if the provided employee ID is that of a manager
+		
+		if (reader.validateEmployee(empID, store)) {  // Check if empID is in the system
+			
+			for (Employee e : store.employeelist) {
+			    if (e.getId().equals(empID) == e instanceof Manager == e.getPassword().equals(password)) {  // If the getID for the employee instance equals the provided empID, and, the employee instance is a Manager type
+			    	
+			    	
+			    	return true;
+			    }
+			}	
+		}
+		return false;
+	}
+	
+	
 
 	// views store customer count
 	public int viewCount() {

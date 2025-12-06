@@ -42,8 +42,8 @@ public class Store {
 		// FINDS THE EMPLOYEE SAWAN & FELIX THE MANAGER
 
 		// database.load();
-		Employee Sawan = new Employee("123", "Sawan Ruppala", "456");
-		Manager Felix = new Manager("234", "Felix", "234", "234");
+		Employee Sawan = new Employee("123", "Sawan Ruppala", "456", "password123");
+		Manager Felix = new Manager("234", "Felix", "234", "password456", "234");
 
 		// database.add() to employeelist
 		employeelist.add(Sawan);
@@ -57,6 +57,8 @@ public class Store {
 		}
 	}
 
+	
+	
 	// basic gets and sets
 	public int getcustomerCount() {
 		return customerCount;

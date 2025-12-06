@@ -11,7 +11,29 @@ public class StoreUI {
 
 		Scanner input = new Scanner(System.in);
 
+		boolean userAuthenticated = false;
+		boolean managerAuthenticated = false;
+		
+		while (!userAuthenticated && !managerAuthenticated) {
+			System.out.println("Enter employee ID: ");		   
+			String empID = input.nextLine();
+			System.out.println("Enter password:");		   
+			String password = input.nextLine();
+			
+			if (system.AuthenticateManager(empID, password))
+				managerAuthenticated = true;
+			else if (system.AuthenticateEmployee(empID, password))
+				userAuthenticated = true;
+			
+		
+		}
+		
+		
 		while (true) {
+			System.out.println(userAuthenticated);
+			System.out.println(managerAuthenticated);
+
+			
 			System.out.println();
 		    System.out.println("  EdgeSport Innovations Ltd. Barrier Control System");
 		    System.out.println("*****************************************************");
@@ -124,7 +146,7 @@ public class StoreUI {
 		        case '7': {
 		        	System.out.println("Employee Swipes His CardID. Enter a Number:");		   
 		        	 String empID = input.nextLine();
-		        	 system.AllowEmployee(empID);
+		        	 system.AllowEmployeeCard(empID);
 		        	 
 		        }
 		    }
