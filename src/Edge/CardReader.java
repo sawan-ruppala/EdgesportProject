@@ -13,7 +13,7 @@ public class CardReader extends Device {
 	public boolean validateEmployee(String cardID, Store store) {
 		for (Employee e : store.employeelist) {
 			
-			//uses equals() instead of == to correctly verify string
+			//Note: use equals() instead of == to correctly verify string
 			if (e.returnCard().equals(cardID)) {
 				System.out.println( e.name + " is verified. Continue Working at Edgesport");
 				return true;
