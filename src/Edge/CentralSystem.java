@@ -49,7 +49,7 @@ public class CentralSystem {
 		int exit = camIn.detectPerson();
 
 		// system updates the total amount
-		int total = store.getcustomerCount() + exit;
+		int total = store.getcustomerCount() - exit;
 
 		// sets a new total count of customers
 		store.setcustomerCount(total);
