@@ -46,7 +46,7 @@ public class StoreUI {
 				String adminPass = input.nextLine();
 				
 				if(store.verifyManager(adminPass)) {
-					System.out.println("\nWelcome Manager" + store.getManagerName() + " to the Manager Console");
+					System.out.println("\nWelcome Manager " + store.getManagerName() + " to the Manager Console");
 					System.out.println("Current maximum limit: " + store.getMaxCustomers());
 					System.out.println("Enter a new maximum limit: ");
 					Scanner scanner = new Scanner(System.in);

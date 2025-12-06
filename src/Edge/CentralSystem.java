@@ -20,6 +20,7 @@ public class CentralSystem {
 		this.store = store;
 
 		// create the devices
+		//creates the "ip-addresses" for all devices
 		camIn = new CameraSystem("CamEnter", "10.1");
 		camOut = new CameraSystem("CamExit", "10.2");
 		reader = new CardReader("CR", "10.3");

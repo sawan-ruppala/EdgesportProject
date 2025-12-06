@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Store {
 
-	//set to default as 5 for testing
+	// set to default as 5 for testing
 	private int maxCustomers = 5;
 	private int customerCount;
 
@@ -32,8 +32,7 @@ public class Store {
 		// found something interesting from internet
 		// systems and console can link directly to this store
 		// https://stackoverflow.com/questions/17441871/is-passing-this-in-a-method-call-accepted-practice-in-java
-		// basically you can have a system object in a store, and a store have a system
-		// object
+		// basically you can have a system object in a store, and a store have a system object
 		this.man_console = new ManagerConsole(this);
 		this.system = new CentralSystem("S-1", this);
 
@@ -67,6 +66,7 @@ public class Store {
 		this.customerCount = count;
 	}
 
+	//gets the Store's maximum capacity limit
 	public int getMaxCustomers() {
 		return maxCustomers;
 	}
@@ -78,15 +78,19 @@ public class Store {
 
 	// adds employee to the employee list
 	// likely for future implementations
-	// for manager e
+	// for manager
+	// Feel Free to use this to test in StoreUI
 	public void AddEmployee(Employee e) {
 		employeelist.add(e);
 	}
-	
+
+	// uses the manager console to verify
 	public boolean verifyManager(String pass) {
 		return man_console.accessCentralSystem(pass, manager);
 	}
-	
+
+	// returns the current Manager's name at the specific
+	// Edgesport store
 	public String getManagerName() {
 		return manager.name;
 	}
