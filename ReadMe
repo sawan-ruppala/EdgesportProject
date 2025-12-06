@@ -1,0 +1,47 @@
+Changes to our Code from Object Design Document
+
+//NOTE:
+//While Coding, our team ran into struggles with implementation
+//and realized that our UML could not fulfill
+//the system's requirements. As such, there are some deviation
+//from the UML and Object Design Document in our code
+//We outlined the changes for each class in the UML below
+
+Employee Class:
+	-Removed the SwipeCard() Function
+	-Replaced with returnCard() to return the Card
+	
+Manager Class:
+-added returnAdminPass to return the manager's adminpass
+
+Store Class:
+-removed storeID and location from the UML Diagram, not needed
+-added Arraylist of employees (employeelist)
+-added Manager as a bidirectional relationship of the Store
+-Added a simulation of database not shown in document
+-added getCustomer,setcustomerCount, getMaxCustomers, and setMaxCustomers
+-added AddEmployee in case of testing in StoreUI, not used in current code
+-added a verifyManager and uses the man.console to verify an adminpass
+-added a getManagerName to return the specific Store's Manager name. 
+
+CentralSystem:
+-Now composed of two cameras(CamIn & CamOut), replacing it with now a composition
+-Composed of one CardReader and one Barrier
+-Also composed with the Store class, so bidirectional relationship now
+-Replaced updateCount with addCount and minusCount to account different camera's functions
+
+Device:
+-removed the Status String (originally planned to have an enum, removed it)
+
+Barrier:
+-added boolean method isOpen() to return barrier open/close status
+-added boolean automaticcontrol to the Barrier
+
+CardReader:
+-Removed ReadCard() 
+-changed validateEmployee(String cardID), added parameter store class
+
+
+
+
+ 
